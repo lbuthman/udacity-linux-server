@@ -23,4 +23,20 @@ sudo apt-get upgrade
 sudo apt-get autoremove
 ```
 
+### Install Software
+
+```sudo apt-get install finger```
+
+### Create a new user
+
+```sudo adduser grader```
+
+### Grant new user sudo permission
+
+```sudo chmod 755 /etc/sudoers.d
+sudo touch /etc/sudoers.d/grader
+sudo chmod 777 /etc/sudoers.d/grader
+sudo echo "grader ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/grader
+sudo chmod 755 /etc/sudoers.d/grader```
+
 ## Third Party Resources
