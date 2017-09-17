@@ -39,4 +39,27 @@ sudo chmod 777 /etc/sudoers.d/grader
 sudo echo "grader ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/grader
 sudo chmod 755 /etc/sudoers.d/grader```
 
+### Generate and Setup Keys for SSH Authentication
+
+<p>Generate Public/Private Keys</p>
+```# On LOCAL Machine
+ssh-keygen
+```
+
+<p>Setup public key on server</p>
+```# On REMOTE Machine
+su grader
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+```
+
+<p>Copy contents of key.pub file on Local Machine</p>
+  
+<p>Pase contents into authorized_keys file</p>
+```nano ~/.ssh/authorized_keys```
+
+<p>Set permissions for folder and file</p>
+```chmod 700 ~/.ssh
+chmod 644 ~/.ssh/authorized_keys```
+
 ## Third Party Resources
