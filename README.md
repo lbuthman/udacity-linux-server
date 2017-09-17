@@ -42,16 +42,12 @@ sudo chmod 755 /etc/sudoers.d/grader```
 ### Generate and Setup Keys for SSH Authentication
 
 <p>Generate Public/Private Keys</p>
-```# On LOCAL Machine
-ssh-keygen
-```
+```ssh-keygen```
 
 <p>Setup public key on server</p>
-```# On REMOTE Machine
-su grader
+```su grader
 mkdir ~/.ssh
-touch ~/.ssh/authorized_keys
-```
+touch ~/.ssh/authorized_keys```
 
 <p>Copy contents of key.pub file on Local Machine</p>
   
