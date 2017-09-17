@@ -13,6 +13,9 @@ web and database servers.
 ## Installed Software Summary
 
 Finger
+Apache2
+Libapache2-Mod-Wsgi
+PostgreSQL
 
 ## Configuration Steps
 
@@ -99,6 +102,16 @@ Networking tab -> Custom TCP 2200
 
 #### Configure UTC time
 ```sudo dpkg-reconfigure tzdata```
+
+#### Install Apache Web Server
+```sudo apt-get install apache2```
+
+Verify by going to IP address and seeing Apache2 Ubuntu Default Page
+
+#### Install mod_wsgi
+```
+sudo apt-get install libapache2-mod-wsgi
+```
 
 
 ## Third Party Resources
