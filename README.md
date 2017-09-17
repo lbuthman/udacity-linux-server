@@ -47,21 +47,22 @@ sudo chmod 755 /etc/sudoers.d/grader
 #### Generate Public/Private Keys
 ```ssh-keygen```
 
-<p>Setup public key on server</p>
+#### Setup public key on server
 ```su grader
 mkdir ~/.ssh
 touch ~/.ssh/authorized_keys
 ```
 
-<p>Copy contents of key.pub file on Local Machine</p>
+#### Copy contents of key.pub file on Local Machine
   
-<p>Pase contents into authorized_keys file</p>
-```nano ~/.ssh/authorized_keys
-```
+#### Paste contents into authorized_keys file
+```nano ~/.ssh/authorized_keys```
 
-<p>Set permissions for folder and file</p>
+#### Set permissions for folder and file
 ```chmod 700 ~/.ssh
 chmod 644 ~/.ssh/authorized_keys
 ```
+
+
 
 ## Third Party Resources
