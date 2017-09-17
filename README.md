@@ -44,9 +44,8 @@ sudo chmod 755 /etc/sudoers.d/grader
 
 ### Generate and Setup Keys for SSH Authentication
 
-<p>Generate Public/Private Keys</p>
-```ssh-keygen
-```
+#### Generate Public/Private Keys
+```ssh-keygen```
 
 <p>Setup public key on server</p>
 ```su grader
