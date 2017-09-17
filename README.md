@@ -25,13 +25,11 @@ sudo apt-get autoremove
 
 ### Install Software
 
-```sudo apt-get install finger
-```
+```sudo apt-get install finger```
 
 ### Create a new user
 
-```sudo adduser grader
-```
+```sudo adduser grader```
 
 ### Grant new user sudo permission
 
@@ -98,5 +96,9 @@ Networking tab -> Custom TCP 2200
 
 #### Verify Firewall Setup
 ```sudo ufw status```
+
+#### Configure UTC time
+```sudo dpkg-reconfigure tzdata```
+
 
 ## Third Party Resources
