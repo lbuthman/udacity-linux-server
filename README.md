@@ -67,7 +67,8 @@ chmod 644 ~/.ssh/authorized_keys
 ```sudo nano /etc/ssh/sshd_config
 Port 2200
 PermitRootLogin no
-Password Authentication no```
+Password Authentication no
+```
 
 ### Restart SSH
 ```sudo service ssh restart```
