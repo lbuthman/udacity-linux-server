@@ -65,12 +65,37 @@ chmod 644 ~/.ssh/authorized_keys
 
 ### Ensure Key Based Authentication and Root Can't Login
 ```sudo nano /etc/ssh/sshd_config
+Port 2200
 PermitRootLogin no
 Password Authentication no```
 
 ### Restart SSH
 ```sudo service ssh restart```
 
+### Enable Custom Rule On LightSail
+Networking tab -> Custom TCP 2200
 
+### Configure Ports in UFW (Uncomplicated Firewall)
+
+#### Default incoming policy
+```sudo ufw default deny incoming```
+
+#### Default outgoing policy
+```sudo ufw default allow outgoing```
+
+#### Listen on Port 2200 for SSH
+```sudo ufw allow 2200/tcp```
+
+#### Listen on Port 80 for HTTP
+```sudo ufw allow www```
+
+#### Listen on Port 123 for NTP (Network Time Protocol)
+```sudo ufw allow ntp```
+
+#### Enable the Firewall
+```sudo ufw enable```
+
+#### Verify Firewall Setup
+```sudo ufw status```
 
 ## Third Party Resources
