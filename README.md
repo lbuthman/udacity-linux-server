@@ -158,6 +158,13 @@ sudo apt-get install postgresql
 sudo -i -u postgres
 ```
 
+#### Create catalog User with limited access
+```
+createuser --interactive -P
+```
+
+Answer no to all questions.
+
 #### Create Database 
 ```
 psql
@@ -168,6 +175,27 @@ CREATE DATABASE catalog;
 #### Switch back to Grader
 ```
 exit
+```
+
+### Install and Configure Git
+
+#### Install (actually installed already, sweet!)
+```
+sudo apt-get install git
+```
+
+#### Inititalize project repo
+```
+sudo mkdir /var/www/catalog
+sudo chown grader:grader /var/www/catalog
+cd /var/www/catalog
+sudo git clone https://github.com/lbuthman/udacity-catalog.git
+sudo mv /var/www/catalog/udacity-catalog /var/www/catalog/catalog
+```
+
+#### Protect .git from Public
+```
+sudo chmod 700 /var/www/catalog/catalog/.git
 ```
 
 ## Third Party Resources
