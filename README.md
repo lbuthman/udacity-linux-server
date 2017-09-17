@@ -6,8 +6,8 @@ web and database servers.
 
 ## Server Info
 
-IP Address: 18.221.61.38
-SSH Port: 2200
+IP Address: 18.221.61.38\n
+SSH Port: 2200\n
 Application URL: http://18.221.61.38
 
 ## Installed Software Summary
