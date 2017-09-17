@@ -12,4 +12,15 @@ web and database servers.
 
 ## Installed Software Summary
 
+Finger
+
+## Configuration Steps
+
+### Update Available Package Lists
+
+```sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove
+```
+
 ## Third Party Resources
