@@ -63,6 +63,14 @@ touch ~/.ssh/authorized_keys
 chmod 644 ~/.ssh/authorized_keys
 ```
 
+### Ensure Key Based Authentication and Root Can't Login
+```sudo nano /etc/ssh/sshd_config
+PermitRootLogin no
+Password Authentication no```
+
+### Restart SSH
+```sudo service ssh restart```
+
 
 
 ## Third Party Resources
