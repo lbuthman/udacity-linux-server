@@ -152,7 +152,7 @@ Verify by going to IP address and seeing Apache2 Ubuntu Default Page
 
 ### Install mod_wsgi
 ```
-sudo apt-get install libapache2-mod-wsgi
+sudo apt-get install libapache2-mod-wsgi-py3
 ```
 
 ### Install PostgreSQL and configure
