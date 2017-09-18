@@ -318,3 +318,7 @@ nslookup 18.221.61.38
 
 #### Download Google Client Secrets and Update
 
+#### Add Absolute Path for client_secrets in both places __init__.py
+```
+/var/www/catalog/catalog/client_secrets.json
+```
