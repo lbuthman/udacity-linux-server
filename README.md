@@ -211,12 +211,10 @@ sudo chmod 700 /var/www/catalog/catalog/.git
 ```
 sudo apt-get install python3-pip
 sudo -H pip3 install --upgrade pip
-
-sudo apt-get -qqy install python-flask
-sudo apt-get -qqy install python-sqlalchemy
-sudo pip3 install oauth2client
-sudo pip install httplib2
-sudo pip install requests
+sudo pip3 install flask==0.12
+sudo pip3 install SQLAlchemy
+sudo -H pip3 install oauth2client
+sudo -H pip3 install psycopg2
 ```
 
 ### Setup Flask Project with Database
@@ -230,6 +228,7 @@ sudo mv project.py __init.py__
 ```
 sudo nano __init__.py
 ```
+change from database_setup import ... to from .database_setup import ...
 add absolute path to client secrets
 engine = create_engine('postgresql://catalog:catalog@localhost/catalog')
 
@@ -312,10 +311,10 @@ sudo service apache2 restart
 sudo cat /var/log/apache2/error.log
 ```
 
-#### Rollback Version of Flask
+#### Add IP and DNS to Google API Restrictions
 ```
-sudo pip install flask==0.10
-pip install werkzeug==0.9
+nslookup 18.221.61.38
 ```
 
-#### Add IP to Google API Restrictions
+#### Download Google Client Secrets and Update
+
