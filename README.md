@@ -209,11 +209,12 @@ sudo chmod 700 /var/www/catalog/catalog/.git
 
 ### Install Project Dependencies
 ```
+sudo apt-get install python3-pip
+sudo -H pip3 install --upgrade pip
+
 sudo apt-get -qqy install python-flask
 sudo apt-get -qqy install python-sqlalchemy
-sudo apt-get -qqy install python-pip
-sudo pip install --upgrade pip
-sudo pip install oauth2client
+sudo pip3 install oauth2client
 sudo pip install httplib2
 sudo pip install requests
 ```
@@ -225,9 +226,9 @@ sudo pip install requests
 sudo mv project.py __init.py__
 ```
 
-#### Edit __init.py__
+#### Edit __init__.py
 ```
-sudo nano __init.py__
+sudo nano __init__.py
 ```
 add absolute path to client secrets
 engine = create_engine('postgresql://catalog:catalog@localhost/catalog')
@@ -294,7 +295,7 @@ sudo nano /etc/apache2/sites-available/catalog.conf
 
 #### Configure Apache to Handle Requests
 ```
-/etc/apache2/sites-enabled/000-default.conf
+sudo nano /etc/apache2/sites-enabled/000-default.conf
 ```
 Append following to the end of the file
 `WSGIScriptAlias / /var/www/catalog/catalog/catalog.wsgi`
@@ -303,3 +304,18 @@ Append following to the end of the file
 ```
 sudo service apache2 restart
 ```
+
+### Work through Failure and Errors :)
+
+#### Look at Error Log
+```
+sudo cat /var/log/apache2/error.log
+```
+
+#### Rollback Version of Flask
+```
+sudo pip install flask==0.10
+pip install werkzeug==0.9
+```
+
+#### Add IP to Google API Restrictions
