@@ -256,3 +256,50 @@ select * from exercise;
 exit
 ```
 
+### Configure Entry Point and Virtual Host
+
+#### Create wsgi File
+```
+sudo nano /var/www/catalog/catalog.wsgi
+```
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0,"/var/www/catalog/")
+
+from catalog import app as application
+
+#### Create Host File
+```
+sudo nano /etc/apache2/sites-available/catalog.conf
+```
+<VirtualHost *:80>
+                ServerName exercisedatabase.com
+                ServerAdmin admin@mywebsite.com
+                WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+                <Directory /var/www/catalog/catalog/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                Alias /static /var/www/catalog/catalog/static
+                <Directory /var/www/catalog/catalog/static/>
+                        Order allow,deny
+                        Allow from all
+                </Directory>
+                ErrorLog ${APACHE_LOG_DIR}/error.log
+                LogLevel warn
+                CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+
+#### Configure Apache to Handle Requests
+```
+/etc/apache2/sites-enabled/000-default.conf
+```
+Append following to the end of the file
+`WSGIScriptAlias / /var/www/catalog/catalog/catalog.wsgi`
+
+### Restart Service
+```
+sudo service apache2 restart
+```
