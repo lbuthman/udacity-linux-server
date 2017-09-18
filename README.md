@@ -12,10 +12,19 @@ web and database servers.
 
 ## Installed Software Summary
 
+Ubuntu
 Finger
+
+## Third Party Resources
+
 Apache2
 Libapache2-Mod-Wsgi
 PostgreSQL
+Flask
+SQL Alchemy
+HttpLib2
+OAuth2Client
+Requests
 
 ## Configuration Steps
 
@@ -198,4 +207,52 @@ sudo mv /var/www/catalog/udacity-catalog /var/www/catalog/catalog
 sudo chmod 700 /var/www/catalog/catalog/.git
 ```
 
-## Third Party Resources
+### Install Project Dependencies
+```
+sudo apt-get -qqy install python-flask
+sudo apt-get -qqy install python-sqlalchemy
+sudo apt-get -qqy install python-pip
+sudo pip install --upgrade pip
+sudo pip install oauth2client
+sudo pip install httplib2
+sudo pip install requests
+```
+
+### Setup Flask Project with Database
+
+#### Rename project.py
+```
+sudo mv project.py __init.py__
+```
+
+#### Edit __init.py__
+```
+sudo nano __init.py__
+```
+add absolute path to client secrets
+engine = create_engine('postgresql://catalog:catalog@localhost/catalog')
+
+#### Edit database_setup.py and lotsofexercises.py
+```
+sudo nano database_setup.py
+sudo nano lotsofexercises.py
+```
+engine = create_engine('postgresql://catalog:catalog@localhost/catalog')
+
+#### Run Database Setup Commands
+```
+sudo python database_setup.py
+sudo python lotsofexercises.py
+```
+
+#### Sanity Check Database Setup
+```
+sudo -i -u postgres
+postgres catalog
+\dt
+select * from category;
+select * from exercise;
+\q
+exit
+```
+
