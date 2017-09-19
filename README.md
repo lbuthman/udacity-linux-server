@@ -12,7 +12,7 @@ web and database servers.
 
 ## Installed Software Summary
 
-Ubuntu
+Ubuntu<br>
 Finger
 
 ## Third Party Resources
