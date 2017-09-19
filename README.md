@@ -323,3 +323,5 @@ nslookup 18.221.61.38
 /var/www/catalog/catalog/client_secrets.json
 /var/www/catalog/catalog/fb_client_secrets.json
 ```
+
+#### Whitelist Facebook OAuth Redirect
