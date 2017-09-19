@@ -17,14 +17,14 @@ Finger
 
 ## Third Party Resources
 
-Apache2
-Libapache2-Mod-Wsgi
-PostgreSQL
-Flask
-SQL Alchemy
-HttpLib2
-OAuth2Client
-Requests
+Apache2<br>
+Libapache2-Mod-Wsgi<br>
+PostgreSQL<br>
+Flask<br>
+SQL Alchemy<br>
+HttpLib2<br>
+OAuth2Client<br>
+Requests<br>
 
 ## Configuration Steps
 
