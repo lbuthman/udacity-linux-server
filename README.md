@@ -318,7 +318,8 @@ nslookup 18.221.61.38
 
 #### Download Google Client Secrets and Update
 
-#### Add Absolute Path for client_secrets in both places __init__.py
+#### Add Absolute Path for client_secrets in all places __init__.py
 ```
 /var/www/catalog/catalog/client_secrets.json
+/var/www/catalog/catalog/fb_client_secrets.json
 ```
